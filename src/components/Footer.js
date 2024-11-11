@@ -5,6 +5,7 @@ import heart from "../Assets/heartbeat1.png";
 const Footer = () => {
   return (
     <div className="mt-5 h-auto md:h-72 bg-[url('https://t3.ftcdn.net/jpg/02/62/65/20/360_F_262652000_Vm0XlmMMDuEGgJ2H1sMXQcxa2vU34RuQ.jpg')] md:bg-[url('https://wallpaperaccess.com/full/3272197.jpg')] bg-cover">
+
       <div class="flex flex-col md:flex-row justify-evenly items-center">
         {/* Column 1 */}
         <div class="flex flex-col items-center">

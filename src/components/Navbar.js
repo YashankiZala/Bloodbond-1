@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import logo from "../Assets/BloodBond_noBg.png";
 
@@ -72,9 +73,15 @@ const Navbar = () => {
         <div className="flex gap-4 items-center ml-4">
           <img src={logo} alt="BloodBond_logo" className="h-24 w-auto" />
           <ul className="flex gap-7 ubuntu-medium text-red-900 text-base">
-            <li className="cursor-pointer">Home</li>
-            <li className="cursor-pointer">About Us</li>
-            <li className="cursor-pointer">Contact Us</li>
+            <li className="cursor-pointer">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="cursor-pointer">
+              <Link to="/">About Us</Link>
+            </li>
+            <li className="cursor-pointer">
+              <Link to="/">Contact Us</Link>
+            </li>
           </ul>
         </div>
         <div className="flex gap-4 items-center mr-24">
@@ -86,7 +93,6 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-
       <div
         id="horizontalNav"
         className={`fixed md:hidden ${
@@ -154,20 +160,20 @@ const Navbar = () => {
             </button>
           </div>
           <div className="mt-6">
-            <a
-              href="#"
+            <Link
+              to="/"
               onClick={toggleNavbar}
               className="hover:bg-gray-50 block rounded-xl m-3 p-3 font-medium lsFont"
             >
               Home
-            </a>
-            <a
-              href="https://drive.google.com/file/d/1nQOn_qUOfeY2GjqwHYs4cqW-bd8T1Etp/view?usp=sharing"
+            </Link>
+            <Link
+              to="/"
               onClick={toggleNavbar}
               className="hover:bg-gray-50 block rounded-xl m-3 p-3 font-medium lsFont"
             >
               About Us
-            </a>
+            </Link>
             <a
               href="#footersection"
               onClick={toggleNavbar}
@@ -185,6 +191,7 @@ const Navbar = () => {
               Login
             </button>
           </ul>
+
         </div>
       </div>
     </div>

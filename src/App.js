@@ -1,30 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import DonorRequesterSection from './components/DonorRequesterSection';
-import WeHealLivesSection from './components/WeHealLivesSection';
-import Footer from './components/Footer';
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Form from "./components/Form";
+import Layout from "./Layout";
+import Home from "./Home";
 
 function App() {
-  const [horiNavVisibility, setHoriNavVisibility] = useState(false);
-
-  const handleBarClick = () => {
-    setHoriNavVisibility(!horiNavVisibility);
-  };
-
-  const handleNavCross = () => {
-    setHoriNavVisibility(false);
-  };
-
   return (
-    <div className="App">
-      <Navbar horiNavVisibility={horiNavVisibility} handleBarClick={handleBarClick} handleNavCross={handleNavCross} />
-      <HeroSection />
-      <DonorRequesterSection />
-      <WeHealLivesSection />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="form" element={<Form />} />
+          {/* <Route path="*" element={<NoPage />} /> */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
