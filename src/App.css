@@ -45,17 +45,28 @@
     font-style: normal;
   }
 
-  .content {
-    white-space: nowrap;
-    animation: move-rtl 6000ms linear infinite;
+  .content-wrapper {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
   }
-
+  
+  .content {
+    display: flex;
+    white-space: nowrap;  /* Prevent text from wrapping */
+    animation: move-rtl 20s linear infinite;
+  }
+  
+  .content h1 {
+    margin-right: 40px;  /* Maintain spacing between lines */
+  }
+  
   @keyframes move-rtl {
     0% {
       transform: translateX(0);
     }
-
     100% {
       transform: translateX(-100%);
     }
-  }
+  }  
