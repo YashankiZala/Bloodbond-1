@@ -11,18 +11,18 @@ const WeHealLivesSection = () => {
         <div class="flex flex-col gap-14 items-center md:flex-row md:justify-evenly w-full h-full mt-9">
           {/* Image 1 */}
           <div class="flex gap-4 items-center">
-            <img src={weConnect} alt=""/>
-            <h1 class="text-base text-red-900 font-bold">We Connect</h1>
+            <img src={weDonate} alt=""/>
+            <h1 class="text-base text-red-900 font-bold">We Donate</h1>
           </div>
           {/* Image 2 */}
           <div class="flex gap-4 items-center">
-            <img src={weDonate} alt=""/>
+            <img src={weConnect} alt=""/>
             <h1 class="text-base text-red-900 font-bold">We Connect</h1>
           </div>
           {/* Image 3 */}
           <div class="flex gap-4 items-center">
             <img src={weEncourage} alt=""/>
-            <h1 class="text-base text-red-900 font-bold">We Connect</h1>
+            <h1 class="text-base text-red-900 font-bold">We Encourage</h1>
           </div>
         </div>
       </div>
