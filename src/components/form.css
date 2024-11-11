@@ -3,7 +3,7 @@
     text-align: center;
   }
   
-  input {
+  input ,select {
     padding: 1%;
     width: 50%;
     margin: 1% 2%;
