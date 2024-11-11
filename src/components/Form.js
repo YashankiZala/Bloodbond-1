@@ -8,6 +8,31 @@ const Form = () => {
   const [age, setAge] = useState(""); // useState to store Age
   const [email, setEmail] = useState(""); // useState to store Email address of the user
   const [bloodGroup, setBloodGroup] = useState(""); // useState to store Password
+
+  function validateForm() {
+    if (firstName.length == 0) {
+      alert("Invalid Form, Name can not be empty");
+      return;
+    }
+    if (mobile.length == 0) {
+      alert("Invalid Form, Mobile Number can not be empty");
+      return;
+    }
+    if (age.length == 0) {
+      alert("Invalid Form, Age can not be empty");
+      return;
+    }
+    if (email.length == 0) {
+      alert("Invalid Form, Email Address can not be empty");
+      return;
+    }
+    if (bloodGroup == ""){
+        alert("Invalid Form, Blood Group can not be empty");
+        return;
+    } 
+    alert("Form is valid");
+  }
+  
   return (
     <div>
       <div className="main_form font-medium lsFont">
@@ -32,13 +57,33 @@ const Form = () => {
             className="border-red-900"
             onChange={(e) => setEmail(e.target.value)}
           />
-          <input
+          <select
             placeholder="Blood Group"
             className="border-red-900"
             onChange={(e) => setBloodGroup(e.target.value)}
-          />
+          >
+            <option value="">
+              Blood Group
+            </option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+          </select>
           <br />
-          <button type="submit" className="bg-red-900">Submit</button>
+          <button
+            type="button"
+            className="bg-red-900"
+            onClick={() => {
+              validateForm();
+            }}
+          >
+            Submit
+          </button>
         </form>
       </div>
     </div>
