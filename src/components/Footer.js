@@ -23,7 +23,7 @@ const Footer = () => {
        {/* Column 2 */}
        <div className="flex flex-col gap-4 my-6 -ml-3 md:-ml-0 md:my-0">
         <div>
-          <a className="text-red-950 ubuntu-bold" href="#">Contact</a>
+          <h1 className="text-red-950 ubuntu-bold" href="#">Contact</h1>
           <div className="h-[2px] w-16 bg-red-900"></div>
         </div>
         <div className="flex flex-col gap-2">
@@ -35,7 +35,7 @@ const Footer = () => {
        {/* Column 3 */}
        <div className="flex flex-col gap-4">
         <div>
-          <a className="text-red-950 ubuntu-bold" href="#">Navigation</a>
+          <h1 className="text-red-950 ubuntu-bold" href="#">Navigation</h1>
           <div className="h-[2px] w-16 bg-red-900"></div>
         </div>
         <div className="flex flex-col gap-2">

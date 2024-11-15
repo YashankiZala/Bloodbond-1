@@ -73,14 +73,14 @@ const AboutUs = () => {
 
           {/* member 2 starts here */}
           <div
-            id="member1"
+            id="member2"
             className="h-80 w-60 bg-red-700 rounded-lg flex flex-col"
           >
             <div className="h-[60%] w-full bg-white rounded-tr-lg rounded-tl-lg flex justify-center items-center">
               <img
                 src={hetvi}
-                alt="Yashanki Zala"
-                className="h-full w-auto rounded-tl-lg rounded-tr-lg"
+                alt="Hetvi Modi"
+                className="h-full w-auto"
               />
             </div>
             <div
@@ -100,14 +100,14 @@ const AboutUs = () => {
 
           {/* member 3 starts here */}
           <div
-            id="member1"
+            id="member3"
             className="h-80 w-60 bg-red-700 rounded-lg flex flex-col"
           >
             <div className="h-[60%] w-full bg-white rounded-tr-lg rounded-tl-lg flex justify-center items-center">
               <img
                 src={vatsal}
-                alt="Yashanki Zala"
-                className="h-full w-auto rounded-tl-lg rounded-tr-lg"
+                alt="Vatsal Koisa"
+                className="h-full w-auto md:rounded-tl-lg md:rounded-tr-lg"
               />
             </div>
             <div
@@ -127,14 +127,14 @@ const AboutUs = () => {
 
           {/* member 4 starts here */}
           <div
-            id="member1"
+            id="member4"
             className="h-80 w-60 bg-red-700 rounded-lg flex flex-col"
           >
             <div className="h-[60%] w-full bg-white rounded-tr-lg rounded-tl-lg flex justify-center items-center">
               <img
                 src={jash}
-                alt="Yashanki Zala"
-                className="h-full w-auto rounded-tl-lg rounded-tr-lg"
+                alt="Jash Patel"
+                className="h-full w-auto"
               />
             </div>
             <div
@@ -154,14 +154,14 @@ const AboutUs = () => {
 
           {/* member 5 starts here */}
           <div
-            id="member1"
+            id="member4"
             className="h-80 w-60 bg-red-700 rounded-lg flex flex-col"
           >
             <div className="h-[60%] w-full bg-white rounded-tr-lg rounded-tl-lg flex justify-center items-center">
               <img
                 src={jash}
-                alt="Yashanki Zala"
-                className="h-full w-auto rounded-tl-lg rounded-tr-lg"
+                alt="Shrusti Khonde"
+                className="h-full w-auto"
               />
             </div>
             <div

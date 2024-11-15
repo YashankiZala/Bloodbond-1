@@ -188,11 +188,17 @@ const Navbar = () => {
           </div>
           <div className="block h-[1px] bg-gray-100"></div>
           <div className="text-gray-500 text-2xl sm:text-4xl flex justify-center gap-7 mt-5">
-            <button className="bg-red-900 text-white ubuntu-bold text-base py-2 px-4">
+            <Link>
+            <button 
+            onClick={toggleNavbar}
+            className="bg-red-900 text-white ubuntu-bold text-base py-2 px-4">
               Find Donor
             </button>
+            </Link>
             <Link to="/login">
-              <button className="bg-red-900 text-white ubuntu-bold text-base py-2 px-4">
+              <button 
+              onClick={toggleNavbar}
+              className="bg-red-900 text-white ubuntu-bold text-base py-2 px-4">
                 Login
               </button>
             </Link>
