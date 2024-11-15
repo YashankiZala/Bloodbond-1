@@ -88,9 +88,11 @@ const Navbar = () => {
           <button className="bg-red-900 text-white ubuntu-bold text-base py-2 px-4">
             Find Donor
           </button>
-          <button className="bg-red-900 text-white ubuntu-bold text-base py-2 px-4">
-            Login
-          </button>
+          <Link to="/login">
+            <button className="bg-red-900 text-white ubuntu-bold text-base py-2 px-4">
+              Login
+            </button>
+          </Link>
         </div>
       </div>
       <div
@@ -100,52 +102,52 @@ const Navbar = () => {
         } bg-white inset-0 z-30 max-w-full ubuntu-medium`}
       >
         <div className="w-full h-9 bg-red-900 flex items-center justify-start overflow-hidden">
-        {/* Wrapper to contain the content and handle overflow */}
-        <div className="content-wrapper">
-          {/* Content will be repeated inside here to ensure smooth scrolling */}
-          <div className="content">
-            <h1 className="text-base text-white ubuntu-light px-5">
-              Give the gift of life, without cost.
-            </h1>
-            <h1 className="text-base text-white ubuntu-light px-5">
-              A drop of your blood, a lifeline for someone.
-            </h1>
-            <h1 className="text-base text-white ubuntu-light px-5">
-              A small step for you, a giant leap for life.
-            </h1>
-            <h1 className="text-base text-white ubuntu-light px-5">
-              Every drop counts. Donate blood, save lives.
-            </h1>
-            <h1 className="text-base text-white ubuntu-light px-5">
-              Your blood, their future. Donate blood.
-            </h1>
-            <h1 className="text-base text-white ubuntu-light px-5">
-              Be the reason someone smiles.
-            </h1>
-          </div>
-          {/* Duplicate the entire content block to make it continuous */}
-          <div className="content">
-            <h1 className="text-base text-white ubuntu-light px-5">
-              Give the gift of life, without cost.
-            </h1>
-            <h1 className="text-base text-white ubuntu-light px-5">
-              A drop of your blood, a lifeline for someone.
-            </h1>
-            <h1 className="text-base text-white ubuntu-light px-5">
-              A small step for you, a giant leap for life.
-            </h1>
-            <h1 className="text-base text-white ubuntu-light px-5">
-              Every drop counts. Donate blood, save lives.
-            </h1>
-            <h1 className="text-base text-white ubuntu-light px-5">
-              Your blood, their future. Donate blood.
-            </h1>
-            <h1 className="text-base text-white ubuntu-light px-5">
-              Be the reason someone smiles.
-            </h1>
+          {/* Wrapper to contain the content and handle overflow */}
+          <div className="content-wrapper">
+            {/* Content will be repeated inside here to ensure smooth scrolling */}
+            <div className="content">
+              <h1 className="text-base text-white ubuntu-light px-5">
+                Give the gift of life, without cost.
+              </h1>
+              <h1 className="text-base text-white ubuntu-light px-5">
+                A drop of your blood, a lifeline for someone.
+              </h1>
+              <h1 className="text-base text-white ubuntu-light px-5">
+                A small step for you, a giant leap for life.
+              </h1>
+              <h1 className="text-base text-white ubuntu-light px-5">
+                Every drop counts. Donate blood, save lives.
+              </h1>
+              <h1 className="text-base text-white ubuntu-light px-5">
+                Your blood, their future. Donate blood.
+              </h1>
+              <h1 className="text-base text-white ubuntu-light px-5">
+                Be the reason someone smiles.
+              </h1>
+            </div>
+            {/* Duplicate the entire content block to make it continuous */}
+            <div className="content">
+              <h1 className="text-base text-white ubuntu-light px-5">
+                Give the gift of life, without cost.
+              </h1>
+              <h1 className="text-base text-white ubuntu-light px-5">
+                A drop of your blood, a lifeline for someone.
+              </h1>
+              <h1 className="text-base text-white ubuntu-light px-5">
+                A small step for you, a giant leap for life.
+              </h1>
+              <h1 className="text-base text-white ubuntu-light px-5">
+                Every drop counts. Donate blood, save lives.
+              </h1>
+              <h1 className="text-base text-white ubuntu-light px-5">
+                Your blood, their future. Donate blood.
+              </h1>
+              <h1 className="text-base text-white ubuntu-light px-5">
+                Be the reason someone smiles.
+              </h1>
+            </div>
           </div>
         </div>
-      </div>
         <div>
           <div id="nav-bar" className="flex justify-between -mt-2">
             <a href="#" id="brand" className="flex gap-2 items-center">
@@ -183,15 +185,16 @@ const Navbar = () => {
             </a>
           </div>
           <div className="block h-[1px] bg-gray-100"></div>
-          <ul className="text-gray-500 text-2xl sm:text-4xl flex justify-center gap-7 mt-5">
+          <div className="text-gray-500 text-2xl sm:text-4xl flex justify-center gap-7 mt-5">
             <button className="bg-red-900 text-white ubuntu-bold text-base py-2 px-4">
               Find Donor
             </button>
-            <button className="bg-red-900 text-white ubuntu-bold text-base py-2 px-4">
-              Login
-            </button>
-          </ul>
-
+            <Link to="/login">
+              <button className="bg-red-900 text-white ubuntu-bold text-base py-2 px-4">
+                Login
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
