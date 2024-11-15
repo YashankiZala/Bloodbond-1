@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from "../Assets/BloodBond_noBg.png";
 import heartbeat3 from "../Assets/heartbeat3.png.crdownload";
 import heart from "../Assets/heartbeat1.png";
@@ -22,24 +23,24 @@ const Footer = () => {
        {/* Column 2 */}
        <div className="flex flex-col gap-4 my-6 -ml-3 md:-ml-0 md:my-0">
         <div>
-          <a className="text-red-950 ubuntu-bold" href="">Contact</a>
+          <a className="text-red-950 ubuntu-bold" href="#">Contact</a>
           <div className="h-[2px] w-16 bg-red-900"></div>
         </div>
         <div className="flex flex-col gap-2">
-          <a className="text-red-900 ubuntu-medium" href="">Call</a>
-          <a className="text-red-900 ubuntu-medium" href="">Loaction</a>
+          <a className="text-red-900 ubuntu-medium" href="#">Call</a>
+          <a className="text-red-900 ubuntu-medium" href="#">Loaction</a>
         </div>
        </div>
 
        {/* Column 3 */}
        <div className="flex flex-col gap-4">
         <div>
-          <a className="text-red-950 ubuntu-bold" href="">Navigation</a>
+          <a className="text-red-950 ubuntu-bold" href="#">Navigation</a>
           <div className="h-[2px] w-16 bg-red-900"></div>
         </div>
         <div className="flex flex-col gap-2">
-          <a className="text-red-900 ubuntu-medium" href="">Home</a>
-          <a className="text-red-900 ubuntu-medium" href="">About Us</a>
+          <Link className="text-red-900 ubuntu-medium" path="/">Home</Link>
+          <Link className="text-red-900 ubuntu-medium" path="/about">About Us</Link>
         </div>
        </div>
        {/* Column 3 ends */}
