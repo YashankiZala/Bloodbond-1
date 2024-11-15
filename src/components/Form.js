@@ -1,15 +1,16 @@
 import React from "react";
 import { useState } from "react";
+import axios from 'axios';
 import "./form.css";
 
 const Form = () => {
-  const [firstName, setFirstName] = useState(""); // useState to store First Name
+  const [name, setName] = useState(""); // useState to store First Name
   const [mobile, setMobile] = useState(""); // useState to store Mobile Number
   const [age, setAge] = useState(""); // useState to store Age
   const [email, setEmail] = useState(""); // useState to store Email address of the user
   const [bloodGroup, setBloodGroup] = useState(""); // useState to store Password
 
-  function validateForm() {
+  const validateForm = async (e) => {
     if (firstName.length == 0) {
       alert("Invalid Form, Name can not be empty");
       return;
@@ -31,7 +32,17 @@ const Form = () => {
         return;
     } 
     alert("Form is valid");
-  }
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:5000/api/form', { name, mobile, age, email, password });
+      alert(response.data.message);
+      // Redirect to login page
+      navigate('/login');
+    } catch (error) {
+      console.error(error);
+      alert('Signup failed!');
+    }
+  };
   
   return (
     <div>
@@ -40,7 +51,7 @@ const Form = () => {
           <input
             placeholder="Name"
             className="border-red-900"
-            onChange={(e) => setFirstName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
           />
           <input
             placeholder="Mobile Number"
