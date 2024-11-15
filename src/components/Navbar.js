@@ -60,24 +60,26 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center md:hidden justify-between h-16 shadow-lg">
+        <Link path="/">
         <img
           src={logo}
           alt="BloodBond_logo"
           className="object-cover w-auto h-20 ml-2"
         />
+        </Link>
         <button className="md:hidden mr-2" onClick={toggleNavbar}>
           <i className="fas fa-bars text-black text-2xl"></i>
         </button>
       </div>
       <div className="hidden md:flex justify-between w-full h-20 shadow-lg items-center">
         <div className="flex gap-4 items-center ml-4">
-          <img src={logo} alt="BloodBond_logo" className="h-24 w-auto" />
+          <Link path="/"><img src={logo} alt="BloodBond_logo" className="h-24 w-auto" /></Link>
           <ul className="flex gap-7 ubuntu-medium text-red-900 text-base">
             <li className="cursor-pointer">
               <Link to="/">Home</Link>
             </li>
             <li className="cursor-pointer">
-              <Link to="/">About Us</Link>
+              <Link to="/about">About Us</Link>
             </li>
             <li className="cursor-pointer">
               <Link to="/">Contact Us</Link>
@@ -150,13 +152,13 @@ const Navbar = () => {
         </div>
         <div>
           <div id="nav-bar" className="flex justify-between -mt-2">
-            <a href="#" id="brand" className="flex gap-2 items-center">
+            <Link path="/" id="brand" className="flex gap-2 items-center">
               <img
                 className="object-cover w-auto h-20 ml-2"
                 src={logo}
                 alt=""
               />
-            </a>
+            </Link>
             <button className="p-2 md:hidden" onClick={toggleNavbar}>
               <i className="fas fa-times text-gray-950 text-xl"></i>
             </button>
@@ -170,7 +172,7 @@ const Navbar = () => {
               Home
             </Link>
             <Link
-              to="/"
+              to="/about"
               onClick={toggleNavbar}
               className="hover:bg-gray-50 block rounded-xl m-3 p-3 font-medium lsFont"
             >

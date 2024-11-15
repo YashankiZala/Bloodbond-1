@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import "./login.css"
 
 const Signup = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/signup', { email, password });
+      const response = await axios.post('http://localhost:5000/api/signup', { name, email, password });
       alert(response.data.message);
       // Redirect to login page
       navigate('/login');
@@ -28,6 +29,14 @@ const Signup = () => {
       <div className="login-form bg-red-900 text-white">
         <h2 className='uppercase font-bold'>Sign Up</h2>
         <form onSubmit={handleSubmit}>
+        <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className='text-red-900'
+            required
+          />
           <input
             type="email"
             placeholder="Email"

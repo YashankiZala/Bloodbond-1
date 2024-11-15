@@ -6,6 +6,7 @@ import Layout from "./Layout";
 import Home from "./Home";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import AboutUs from "./components/About";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="form" element={<Form />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
+          <Route path="about" element={<AboutUs />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Route>
       </Routes>
