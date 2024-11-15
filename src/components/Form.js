@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from 'axios';
 import "./form.css";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   const [name, setName] = useState(""); // useState to store First Name
@@ -9,9 +10,10 @@ const Form = () => {
   const [age, setAge] = useState(""); // useState to store Age
   const [email, setEmail] = useState(""); // useState to store Email address of the user
   const [bloodGroup, setBloodGroup] = useState(""); // useState to store Password
+  const navigate = useNavigate();
 
   const validateForm = async (e) => {
-    if (firstName.length == 0) {
+    if (name.length == 0) {
       alert("Invalid Form, Name can not be empty");
       return;
     }
@@ -34,10 +36,10 @@ const Form = () => {
     alert("Form is valid");
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/form', { name, mobile, age, email, password });
+      const response = await axios.post('http://localhost:5000/api/form', { name, mobile, age, email, bloodGroup });
       alert(response.data.message);
       // Redirect to login page
-      navigate('/login');
+      navigate('/');
     } catch (error) {
       console.error(error);
       alert('Signup failed!');
