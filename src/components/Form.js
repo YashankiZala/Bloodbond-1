@@ -7,7 +7,7 @@ const Form = () => {
   const [name, setName] = useState(""); // useState to store First Name
   const [mobile, setMobile] = useState(""); // useState to store Mobile Number
   const [age, setAge] = useState(""); // useState to store Age
-  const [email, setEmail] = useState(""); // useState to store Email address of the user
+  const [address, setAddress] = useState(""); // useState to store address address of the user
   const [bloodGroup, setBloodGroup] = useState(""); // useState to store Blood Group
   const [location, setLocation] = useState(""); // useState to store Location
   const navigate = useNavigate();
@@ -27,8 +27,8 @@ const Form = () => {
       alert("Invalid Form, Age can not be empty");
       return;
     }
-    if (email.length === 0) {
-      alert("Invalid Form, Email Address can not be empty");
+    if (address.length === 0) {
+      alert("Invalid Form, Address can not be empty");
       return;
     }
     if (bloodGroup === "") {
@@ -43,7 +43,7 @@ const Form = () => {
     alert("Form is valid");
 
     try {
-      const response = await axios.post('http://localhost:5000/api/form', { name, mobile, age, email, bloodGroup, location });
+      const response = await axios.post('http://localhost:5000/api/form', { name, bloodGroup, location, address, mobile });
       alert(response.data.message);
       // Redirect to login page
       navigate('/');
@@ -73,9 +73,9 @@ const Form = () => {
             className="border-red-900"
           />
           <input
-            placeholder="Email"
+            placeholder="Address"
             className="border-red-900"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setAddress(e.target.value)}
           />
           {/* New Location Input Field */}
           <input
