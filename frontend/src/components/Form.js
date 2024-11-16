@@ -43,7 +43,7 @@ const Form = () => {
     alert("Form is valid");
 
     try {
-      const response = await axios.post('http://localhost:5000/api/form', { name, bloodGroup, location, address, mobile });
+      const response = await axios.post('http://localhost:3000/api/form', { name, bloodGroup, location, address, mobile });
       alert(response.data.message);
       // Redirect to login page
       navigate('/');

@@ -37,7 +37,7 @@ mongoose
   });
 
 // Routes for donors
-app.use("/donors", donorRoutes);
+app.use("/api/donors", donorRoutes);
 
 // User schema for login and signup
 const UserSchema = new mongoose.Schema({

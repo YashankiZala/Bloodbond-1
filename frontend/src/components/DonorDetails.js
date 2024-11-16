@@ -19,7 +19,7 @@ const DonorDetails = () => {
   const fetchDonorDetails = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get(`http://localhost:5000/donors/${id}`); // Adjust URL if needed
+      const { data } = await axios.get(`http://localhost:3000/api/donors/${id}`); // Adjust URL if needed
       setDonor(data);
     } catch (error) {
       console.error('Error fetching donor details:', error);

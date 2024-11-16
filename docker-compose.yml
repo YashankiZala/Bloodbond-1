@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend  # Ensure this path matches your actual directory structure
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - bloodbond-network
+
+  backend:
+    build:
+      context: ./backend  # Ensure this path matches your actual directory structure
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5000"
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URI: mongodb+srv://Hetvi:HJSVY12345@cluster0.9p9ha.mongodb.net/BloodBond?retryWrites=true&w=majority&appName=Cluster0
+    networks:
+      - bloodbond-network
+
+  mongo:
+    image: mongo:5.0
+    ports:
+      - "27017:27017"
+    networks:
+      - bloodbond-network
+    volumes:
+      - mongo-data:/data/db
+
+networks:
+  bloodbond-network:
+    driver: bridge
+
+volumes:
+  mongo-data:

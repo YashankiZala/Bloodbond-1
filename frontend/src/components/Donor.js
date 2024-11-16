@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './Donor.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./Donor.css";
 
 const Donor = () => {
   const [donors, setDonors] = useState([]);
-  const [bloodGroup, setBloodGroup] = useState('');
-  const [location, setLocation] = useState('');
+  const [bloodGroup, setBloodGroup] = useState("");
+  const [location, setLocation] = useState("");
   const [loading, setLoading] = useState(false);
   const [selectedDonorId, setSelectedDonorId] = useState(null); // Track selected donor ID
   const [selectedDonorDetails, setSelectedDonorDetails] = useState(null); // Track selected donor details
@@ -17,10 +17,17 @@ const Donor = () => {
   const fetchDonors = async (filters = {}) => {
     setLoading(true);
     try {
-      const { data } = await axios.get('http://localhost:5000/donors/search', { params: filters });
-      setDonors(data);
+      const { data } = await axios.get("http://localhost:3000/api/donors/search", {
+        params: filters,
+      });
+      console.log(data)
+      if (Array.isArray(data)) {
+          setDonors(data);  
+        } else {
+          console.error("API response is not an array", data);
+        }
     } catch (error) {
-      console.error('Error fetching donors:', error);
+      console.error("Error fetching donors:", error);
     } finally {
       setLoading(false);
     }
@@ -35,11 +42,11 @@ const Donor = () => {
     }
 
     try {
-      const { data } = await axios.get(`http://localhost:5000/donors/${id}`);
+      const { data } = await axios.get(`http://localhost:3000/api/donors/${id}`);
       setSelectedDonorId(id); // Set the selected donor ID
       setSelectedDonorDetails(data); // Set the donor details
     } catch (error) {
-      console.error('Error fetching donor details:', error);
+      console.error("Error fetching donor details:", error);
     }
   };
 
@@ -85,9 +92,7 @@ const Donor = () => {
       ) : (
         <div className="donor-list">
           <ul>
-            {donors.length === 0 ? (
-              <li>No donors found</li>
-            ) : (
+            {donors.length > 0 ? (
               donors.map((donor) => (
                 <React.Fragment key={donor._id}>
                   <li>
@@ -105,14 +110,17 @@ const Donor = () => {
                         <p>Name: {selectedDonorDetails.name}</p>
                         <p>Blood Group: {selectedDonorDetails.bloodGroup}</p>
                         <p>Location: {selectedDonorDetails.location}</p>
-                        <p>Address: {selectedDonorDetails.address || 'N/A'}</p>
-                        <p>Contact: {selectedDonorDetails.contactNumber || 'N/A'}</p>
+                        <p>Address: {selectedDonorDetails.address || "N/A"}</p>
+                        <p>
+                          Contact: {selectedDonorDetails.contactNumber || "N/A"}
+                        </p>
                       </div>
                     </li>
                   )}
-
                 </React.Fragment>
               ))
+            ) : (
+              <li>No donors found</li>
             )}
           </ul>
         </div>
