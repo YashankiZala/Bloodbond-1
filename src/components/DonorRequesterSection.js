@@ -10,7 +10,7 @@ const DonorRequesterSection = () => {
       {/* Buttons div starts here */}
        <div className="flex flex-col md:flex-row gap-5 md:gap-12 mt-7 items-center md:justify-center md:mt-12">
         <Link to="/form"><button className="ubuntu-medium text-white bg-red-900 h-16 w-40 md:w-52 md:text-xl">BECOME A DONOR</button></Link>
-        <button className="ubuntu-medium text-white bg-red-900 h-16 w-40 md:w-52 md:text-xl">FIND A DONOR</button>
+        <Link to="/donor"><button className="ubuntu-medium text-white bg-red-900 h-16 w-40 md:w-52 md:text-xl">FIND A DONOR</button></Link>
        </div>
       {/* Buttons div ends here */}
     </div>

@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from 'axios';
 import "./form.css";
 import { useNavigate } from "react-router-dom";
@@ -9,34 +8,42 @@ const Form = () => {
   const [mobile, setMobile] = useState(""); // useState to store Mobile Number
   const [age, setAge] = useState(""); // useState to store Age
   const [email, setEmail] = useState(""); // useState to store Email address of the user
-  const [bloodGroup, setBloodGroup] = useState(""); // useState to store Password
+  const [bloodGroup, setBloodGroup] = useState(""); // useState to store Blood Group
+  const [location, setLocation] = useState(""); // useState to store Location
   const navigate = useNavigate();
 
   const validateForm = async (e) => {
-    if (name.length == 0) {
+    e.preventDefault(); // Prevents the default form submission behavior
+
+    if (name.length === 0) {
       alert("Invalid Form, Name can not be empty");
       return;
     }
-    if (mobile.length == 0) {
+    if (mobile.length === 0) {
       alert("Invalid Form, Mobile Number can not be empty");
       return;
     }
-    if (age.length == 0) {
+    if (age.length === 0) {
       alert("Invalid Form, Age can not be empty");
       return;
     }
-    if (email.length == 0) {
+    if (email.length === 0) {
       alert("Invalid Form, Email Address can not be empty");
       return;
     }
-    if (bloodGroup == ""){
-        alert("Invalid Form, Blood Group can not be empty");
-        return;
-    } 
+    if (bloodGroup === "") {
+      alert("Invalid Form, Blood Group can not be empty");
+      return;
+    }
+    if (location.length === 0) {
+      alert("Invalid Form, Location can not be empty");
+      return;
+    }
+
     alert("Form is valid");
-    e.preventDefault();
+
     try {
-      const response = await axios.post('http://localhost:5000/api/form', { name, mobile, age, email, bloodGroup });
+      const response = await axios.post('http://localhost:5000/api/form', { name, mobile, age, email, bloodGroup, location });
       alert(response.data.message);
       // Redirect to login page
       navigate('/');
@@ -45,11 +52,11 @@ const Form = () => {
       alert('Signup failed!');
     }
   };
-  
+
   return (
     <div>
       <div className="main_form font-medium lsFont">
-        <form>
+        <form onSubmit={validateForm}> {/* Bind validateForm to onSubmit */}
           <input
             placeholder="Name"
             className="border-red-900"
@@ -70,14 +77,18 @@ const Form = () => {
             className="border-red-900"
             onChange={(e) => setEmail(e.target.value)}
           />
+          {/* New Location Input Field */}
+          <input
+            placeholder="Location"
+            className="border-red-900"
+            onChange={(e) => setLocation(e.target.value)}
+          />
+          {/* Blood Group Dropdown */}
           <select
-            placeholder="Blood Group"
             className="border-red-900"
             onChange={(e) => setBloodGroup(e.target.value)}
           >
-            <option value="">
-              Blood Group
-            </option>
+            <option value="">Blood Group</option>
             <option value="A+">A+</option>
             <option value="A-">A-</option>
             <option value="B+">B+</option>
@@ -89,11 +100,8 @@ const Form = () => {
           </select>
           <br />
           <button
-            type="button"
+            type="submit" // Change to type="submit" to trigger form submission
             className="bg-red-900"
-            onClick={() => {
-              validateForm();
-            }}
           >
             Submit
           </button>

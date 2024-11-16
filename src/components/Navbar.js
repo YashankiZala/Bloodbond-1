@@ -87,9 +87,11 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex gap-4 items-center mr-24">
-          <button className="bg-red-900 text-white ubuntu-bold text-base py-2 px-4">
-            Find Donor
-          </button>
+        <Link to="/donor">
+            <button className="bg-red-900 text-white ubuntu-bold text-base py-2 px-4">
+              Find Donor
+            </button>
+          </Link>
           <Link to="/login">
             <button className="bg-red-900 text-white ubuntu-bold text-base py-2 px-4">
               Login
@@ -188,7 +190,7 @@ const Navbar = () => {
           </div>
           <div className="block h-[1px] bg-gray-100"></div>
           <div className="text-gray-500 text-2xl sm:text-4xl flex justify-center gap-7 mt-5">
-            <Link>
+            <Link to="/donor">
             <button 
             onClick={toggleNavbar}
             className="bg-red-900 text-white ubuntu-bold text-base py-2 px-4">
