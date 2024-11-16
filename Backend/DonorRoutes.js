@@ -11,7 +11,7 @@ router.get('/search', async (req, res) => {
 
   try {
     const donors = await Donor.find(filters);
-    res.json(donors);
+    return res.json(donors);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching donors', error });
   }
